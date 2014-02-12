@@ -22,18 +22,39 @@ Partial Class form_service
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.pal_showafterchoosecus = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.grid_packet = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.grid_chooseprom = New System.Windows.Forms.DataGridView()
+        Me.prom_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prom_type = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prom_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.privilage = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.flag = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prom_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prom_regismem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prom_start = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prom_end = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btn_choosemember = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -48,7 +69,6 @@ Partial Class form_service
         Me.txt_cusname = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_delserv = New System.Windows.Forms.Button()
-        Me.btn_editserv = New System.Windows.Forms.Button()
         Me.btn_resetserv = New System.Windows.Forms.Button()
         Me.btn_addserv = New System.Windows.Forms.Button()
         Me.dtp_servdate = New System.Windows.Forms.DateTimePicker()
@@ -69,18 +89,6 @@ Partial Class form_service
         Me.txt_searchserv = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.grid_servresult = New System.Windows.Forms.DataGridView()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.grid_chooseprom = New System.Windows.Forms.DataGridView()
-        Me.c1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.prom_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prom_type = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prom_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.privilage = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.flag = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prom_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prom_regismem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prom_start = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prom_end = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.grid_showservlist = New System.Windows.Forms.DataGridView()
         Me.del = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -176,26 +184,16 @@ Partial Class form_service
         Me.DataGridViewTextBoxColumn40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.pal_showafterchoosecus.SuspendLayout()
         CType(Me.grid_packet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_chooseprom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_selectprom.SuspendLayout()
         CType(Me.grid_selectprom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_servresult, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grid_chooseprom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_showservlist, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -239,7 +237,6 @@ Partial Class form_service
         Me.SplitContainer1.Panel1.Controls.Add(Me.txt_cusname)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label6)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_delserv)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_editserv)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_resetserv)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_addserv)
         Me.SplitContainer1.Panel1.Controls.Add(Me.dtp_servdate)
@@ -294,6 +291,152 @@ Partial Class form_service
         Me.grid_packet.Name = "grid_packet"
         Me.grid_packet.Size = New System.Drawing.Size(301, 128)
         Me.grid_packet.TabIndex = 127
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "เลือก"
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.Width = 50
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ชื่อโปรโมชั่น"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 170
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "ประเภท"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "ราคา"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "สิทธิ์"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.HeaderText = "flag"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Visible = False
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "prom_id"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Visible = False
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "prom_regismem"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Visible = False
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "prom_start"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Visible = False
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "prom_end"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(3, 192)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(157, 20)
+        Me.Label12.TabIndex = 122
+        Me.Label12.Text = "โปรโมชั่นที่สามารถใช้ได้"
+        '
+        'grid_chooseprom
+        '
+        Me.grid_chooseprom.AllowUserToAddRows = False
+        Me.grid_chooseprom.AllowUserToDeleteRows = False
+        Me.grid_chooseprom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_chooseprom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.prom_name, Me.prom_type, Me.prom_price, Me.privilage, Me.flag, Me.prom_id, Me.prom_regismem, Me.prom_start, Me.prom_end})
+        Me.grid_chooseprom.Location = New System.Drawing.Point(3, 215)
+        Me.grid_chooseprom.Name = "grid_chooseprom"
+        Me.grid_chooseprom.Size = New System.Drawing.Size(301, 128)
+        Me.grid_chooseprom.TabIndex = 121
+        '
+        'prom_name
+        '
+        Me.prom_name.HeaderText = "ชื่อโปรโมชั่น / แพ็คเกจ"
+        Me.prom_name.Name = "prom_name"
+        Me.prom_name.ReadOnly = True
+        Me.prom_name.Width = 170
+        '
+        'prom_type
+        '
+        Me.prom_type.HeaderText = "ประเภท"
+        Me.prom_type.Name = "prom_type"
+        Me.prom_type.ReadOnly = True
+        '
+        'prom_price
+        '
+        Me.prom_price.HeaderText = "ราคา"
+        Me.prom_price.Name = "prom_price"
+        Me.prom_price.ReadOnly = True
+        '
+        'privilage
+        '
+        Me.privilage.HeaderText = "สิทธิ์"
+        Me.privilage.Name = "privilage"
+        Me.privilage.ReadOnly = True
+        '
+        'flag
+        '
+        Me.flag.HeaderText = "flag"
+        Me.flag.Name = "flag"
+        Me.flag.ReadOnly = True
+        Me.flag.Visible = False
+        '
+        'prom_id
+        '
+        Me.prom_id.HeaderText = "prom_id"
+        Me.prom_id.Name = "prom_id"
+        Me.prom_id.ReadOnly = True
+        Me.prom_id.Visible = False
+        '
+        'prom_regismem
+        '
+        Me.prom_regismem.HeaderText = "prom_regismem"
+        Me.prom_regismem.Name = "prom_regismem"
+        Me.prom_regismem.ReadOnly = True
+        Me.prom_regismem.Visible = False
+        '
+        'prom_start
+        '
+        Me.prom_start.HeaderText = "prom_start"
+        Me.prom_start.Name = "prom_start"
+        Me.prom_start.ReadOnly = True
+        Me.prom_start.Visible = False
+        '
+        'prom_end
+        '
+        Me.prom_end.HeaderText = "prom_end"
+        Me.prom_end.Name = "prom_end"
+        Me.prom_end.ReadOnly = True
+        Me.prom_end.Visible = False
         '
         'Label8
         '
@@ -408,25 +551,13 @@ Partial Class form_service
         '
         Me.btn_delserv.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.btn_delserv.Image = Global.aispa.My.Resources.Resources.delete_icon
-        Me.btn_delserv.Location = New System.Drawing.Point(132, 344)
+        Me.btn_delserv.Location = New System.Drawing.Point(76, 344)
         Me.btn_delserv.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_delserv.Name = "btn_delserv"
         Me.btn_delserv.Size = New System.Drawing.Size(79, 40)
         Me.btn_delserv.TabIndex = 96
         Me.btn_delserv.UseVisualStyleBackColor = True
         Me.btn_delserv.Visible = False
-        '
-        'btn_editserv
-        '
-        Me.btn_editserv.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.btn_editserv.Image = Global.aispa.My.Resources.Resources.edit_icon
-        Me.btn_editserv.Location = New System.Drawing.Point(10, 343)
-        Me.btn_editserv.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_editserv.Name = "btn_editserv"
-        Me.btn_editserv.Size = New System.Drawing.Size(79, 40)
-        Me.btn_editserv.TabIndex = 95
-        Me.btn_editserv.UseVisualStyleBackColor = True
-        Me.btn_editserv.Visible = False
         '
         'btn_resetserv
         '
@@ -443,7 +574,7 @@ Partial Class form_service
         '
         Me.btn_addserv.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.btn_addserv.Image = Global.aispa.My.Resources.Resources.add_icon
-        Me.btn_addserv.Location = New System.Drawing.Point(42, 344)
+        Me.btn_addserv.Location = New System.Drawing.Point(76, 344)
         Me.btn_addserv.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_addserv.Name = "btn_addserv"
         Me.btn_addserv.Size = New System.Drawing.Size(79, 40)
@@ -500,8 +631,8 @@ Partial Class form_service
         'grid_selectprom
         '
         Me.grid_selectprom.AllowUserToAddRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.grid_selectprom.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.grid_selectprom.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.grid_selectprom.ColumnHeadersHeight = 30
         Me.grid_selectprom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.grid_selectprom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn2, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14})
@@ -613,92 +744,6 @@ Partial Class form_service
         Me.grid_servresult.Size = New System.Drawing.Size(488, 193)
         Me.grid_servresult.TabIndex = 97
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(3, 192)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(157, 20)
-        Me.Label12.TabIndex = 122
-        Me.Label12.Text = "โปรโมชั่นที่สามารถใช้ได้"
-        '
-        'grid_chooseprom
-        '
-        Me.grid_chooseprom.AllowUserToAddRows = False
-        Me.grid_chooseprom.AllowUserToDeleteRows = False
-        Me.grid_chooseprom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_chooseprom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.c1, Me.prom_name, Me.prom_type, Me.prom_price, Me.privilage, Me.flag, Me.prom_id, Me.prom_regismem, Me.prom_start, Me.prom_end})
-        Me.grid_chooseprom.Location = New System.Drawing.Point(3, 215)
-        Me.grid_chooseprom.Name = "grid_chooseprom"
-        Me.grid_chooseprom.Size = New System.Drawing.Size(301, 128)
-        Me.grid_chooseprom.TabIndex = 121
-        '
-        'c1
-        '
-        Me.c1.HeaderText = "เลือก"
-        Me.c1.Name = "c1"
-        Me.c1.Width = 50
-        '
-        'prom_name
-        '
-        Me.prom_name.HeaderText = "ชื่อโปรโมชั่น / แพ็คเกจ"
-        Me.prom_name.Name = "prom_name"
-        Me.prom_name.ReadOnly = True
-        Me.prom_name.Width = 170
-        '
-        'prom_type
-        '
-        Me.prom_type.HeaderText = "ประเภท"
-        Me.prom_type.Name = "prom_type"
-        Me.prom_type.ReadOnly = True
-        '
-        'prom_price
-        '
-        Me.prom_price.HeaderText = "ราคา"
-        Me.prom_price.Name = "prom_price"
-        Me.prom_price.ReadOnly = True
-        '
-        'privilage
-        '
-        Me.privilage.HeaderText = "สิทธิ์"
-        Me.privilage.Name = "privilage"
-        Me.privilage.ReadOnly = True
-        '
-        'flag
-        '
-        Me.flag.HeaderText = "flag"
-        Me.flag.Name = "flag"
-        Me.flag.ReadOnly = True
-        Me.flag.Visible = False
-        '
-        'prom_id
-        '
-        Me.prom_id.HeaderText = "prom_id"
-        Me.prom_id.Name = "prom_id"
-        Me.prom_id.ReadOnly = True
-        Me.prom_id.Visible = False
-        '
-        'prom_regismem
-        '
-        Me.prom_regismem.HeaderText = "prom_regismem"
-        Me.prom_regismem.Name = "prom_regismem"
-        Me.prom_regismem.ReadOnly = True
-        Me.prom_regismem.Visible = False
-        '
-        'prom_start
-        '
-        Me.prom_start.HeaderText = "prom_start"
-        Me.prom_start.Name = "prom_start"
-        Me.prom_start.ReadOnly = True
-        Me.prom_start.Visible = False
-        '
-        'prom_end
-        '
-        Me.prom_end.HeaderText = "prom_end"
-        Me.prom_end.Name = "prom_end"
-        Me.prom_end.ReadOnly = True
-        Me.prom_end.Visible = False
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -712,30 +757,30 @@ Partial Class form_service
         'grid_showservlist
         '
         Me.grid_showservlist.AllowUserToAddRows = False
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.grid_showservlist.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grid_showservlist.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.grid_showservlist.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grid_showservlist.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.grid_showservlist.ColumnHeadersHeight = 30
         Me.grid_showservlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.grid_showservlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.del, Me.runno, Me.prod_name, Me.prod_qty, Me.unit, Me.liservlist_id})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grid_showservlist.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grid_showservlist.DefaultCellStyle = DataGridViewCellStyle12
         Me.grid_showservlist.Location = New System.Drawing.Point(23, 85)
         Me.grid_showservlist.Name = "grid_showservlist"
-        Me.grid_showservlist.Size = New System.Drawing.Size(664, 156)
+        Me.grid_showservlist.Size = New System.Drawing.Size(664, 138)
         Me.grid_showservlist.TabIndex = 98
         '
         'del
@@ -816,7 +861,7 @@ Partial Class form_service
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label15.Location = New System.Drawing.Point(1069, 179)
+        Me.Label15.Location = New System.Drawing.Point(1064, 159)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(45, 25)
         Me.Label15.TabIndex = 124
@@ -826,7 +871,7 @@ Partial Class form_service
         '
         Me.price_packet.AutoSize = True
         Me.price_packet.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.price_packet.Location = New System.Drawing.Point(926, 179)
+        Me.price_packet.Location = New System.Drawing.Point(921, 159)
         Me.price_packet.Name = "price_packet"
         Me.price_packet.Size = New System.Drawing.Size(54, 25)
         Me.price_packet.TabIndex = 123
@@ -837,7 +882,7 @@ Partial Class form_service
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label20.Location = New System.Drawing.Point(713, 179)
+        Me.Label20.Location = New System.Drawing.Point(708, 159)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(143, 25)
         Me.Label20.TabIndex = 122
@@ -847,7 +892,7 @@ Partial Class form_service
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label17.Location = New System.Drawing.Point(1069, 143)
+        Me.Label17.Location = New System.Drawing.Point(1064, 123)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(45, 25)
         Me.Label17.TabIndex = 121
@@ -857,7 +902,7 @@ Partial Class form_service
         '
         Me.price_normal.AutoSize = True
         Me.price_normal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.price_normal.Location = New System.Drawing.Point(926, 143)
+        Me.price_normal.Location = New System.Drawing.Point(921, 123)
         Me.price_normal.Name = "price_normal"
         Me.price_normal.Size = New System.Drawing.Size(54, 25)
         Me.price_normal.TabIndex = 120
@@ -868,7 +913,7 @@ Partial Class form_service
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label19.Location = New System.Drawing.Point(709, 143)
+        Me.Label19.Location = New System.Drawing.Point(704, 123)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(87, 25)
         Me.Label19.TabIndex = 119
@@ -878,7 +923,7 @@ Partial Class form_service
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label11.Location = New System.Drawing.Point(1069, 216)
+        Me.Label11.Location = New System.Drawing.Point(1064, 196)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(45, 25)
         Me.Label11.TabIndex = 115
@@ -888,7 +933,7 @@ Partial Class form_service
         '
         Me.price_all.AutoSize = True
         Me.price_all.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.price_all.Location = New System.Drawing.Point(926, 216)
+        Me.price_all.Location = New System.Drawing.Point(921, 196)
         Me.price_all.Name = "price_all"
         Me.price_all.Size = New System.Drawing.Size(54, 25)
         Me.price_all.TabIndex = 109
@@ -899,7 +944,7 @@ Partial Class form_service
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label10.Location = New System.Drawing.Point(713, 216)
+        Me.Label10.Location = New System.Drawing.Point(708, 196)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(136, 25)
         Me.Label10.TabIndex = 108
@@ -923,7 +968,7 @@ Partial Class form_service
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1264, 712)
+        Me.TabControl1.Size = New System.Drawing.Size(1264, 700)
         Me.TabControl1.TabIndex = 4
         '
         'TabPage1
@@ -933,7 +978,7 @@ Partial Class form_service
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1256, 686)
+        Me.TabPage1.Size = New System.Drawing.Size(1256, 674)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "การซื้อบริการ"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -945,7 +990,7 @@ Partial Class form_service
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1256, 686)
+        Me.TabPage2.Size = New System.Drawing.Size(1256, 674)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "การใช้บริการ"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1387,8 +1432,8 @@ Partial Class form_service
         'DataGridView3
         '
         Me.DataGridView3.AllowUserToAddRows = False
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.DataGridView3.ColumnHeadersHeight = 30
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn5, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37})
@@ -1547,27 +1592,27 @@ Partial Class form_service
         'DataGridView5
         '
         Me.DataGridView5.AllowUserToAddRows = False
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.DataGridView5.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView5.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.DataGridView5.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView5.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.DataGridView5.ColumnHeadersHeight = 30
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn6, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView5.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView5.DefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridView5.Location = New System.Drawing.Point(23, 85)
         Me.DataGridView5.Name = "DataGridView5"
         Me.DataGridView5.Size = New System.Drawing.Size(664, 156)
@@ -1614,77 +1659,11 @@ Partial Class form_service
         Me.DataGridViewTextBoxColumn42.Visible = False
         Me.DataGridViewTextBoxColumn42.Width = 110
         '
-        'DataGridViewCheckBoxColumn1
-        '
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "เลือก"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
-        Me.DataGridViewCheckBoxColumn1.Width = 50
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ชื่อโปรโมชั่น"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 170
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ประเภท"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ราคา"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "สิทธิ์"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "flag"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Visible = False
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "prom_id"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Visible = False
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "prom_regismem"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Visible = False
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "prom_start"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Visible = False
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "prom_end"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        Me.DataGridViewTextBoxColumn9.Visible = False
-        '
         'form_service
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1264, 712)
+        Me.ClientSize = New System.Drawing.Size(1264, 700)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "form_service"
         Me.Text = "form_service"
@@ -1697,10 +1676,10 @@ Partial Class form_service
         Me.pal_showafterchoosecus.ResumeLayout(False)
         Me.pal_showafterchoosecus.PerformLayout()
         CType(Me.grid_packet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_chooseprom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grp_selectprom.ResumeLayout(False)
         CType(Me.grid_selectprom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_servresult, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grid_chooseprom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_showservlist, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -1729,7 +1708,6 @@ Partial Class form_service
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btn_delserv As System.Windows.Forms.Button
-    Friend WithEvents btn_editserv As System.Windows.Forms.Button
     Friend WithEvents btn_resetserv As System.Windows.Forms.Button
     Friend WithEvents btn_addserv As System.Windows.Forms.Button
     Friend WithEvents dtp_servdate As System.Windows.Forms.DateTimePicker
@@ -1778,16 +1756,6 @@ Partial Class form_service
     Friend WithEvents btn_delservlist As System.Windows.Forms.Button
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents grid_packet As System.Windows.Forms.DataGridView
-    Friend WithEvents c1 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents prom_name As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prom_type As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prom_price As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents privilage As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents flag As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prom_id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prom_regismem As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prom_start As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prom_end As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents grp_selectprom As System.Windows.Forms.GroupBox
     Friend WithEvents grid_selectprom As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewCheckBoxColumn2 As System.Windows.Forms.DataGridViewCheckBoxColumn
@@ -1882,4 +1850,13 @@ Partial Class form_service
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prom_name As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prom_type As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prom_price As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents privilage As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents flag As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prom_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prom_regismem As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prom_start As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prom_end As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

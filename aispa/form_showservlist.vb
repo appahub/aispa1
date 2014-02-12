@@ -49,12 +49,14 @@ Public Class form_showservlist
                 Next
             End If
 
-            gridnow.Rows.Add(row)
             Dim price_all As Double = Double.Parse(form_service.price_all.Text)
+            Dim price_normal As Double = Double.Parse(form_service.price_normal.Text)
             Dim new_price As Double = Double.Parse(servprice)
             Dim now_price_all As Double = price_all + new_price
+            Dim now_price_normal As Double = price_normal + new_price
             form_service.price_all.Text = now_price_all.ToString("#,##0.00")
-            form_service.price_normal.Text = now_price_all.ToString("#,##0.00")
+            form_service.price_normal.Text = now_price_normal.ToString("#,##0.00")
+            gridnow.Rows.Add(row)
             'Dim price_discount As Double = Double.Parse(form_service.price_discount.Text)
             'Dim now_price_discount As Double = price_discount - 0 ' 0 คือ ค่าที่ต้องเอามาจาก promotion
             'form_service.price_discount.Text = now_price_discount.ToString("0,00.00")

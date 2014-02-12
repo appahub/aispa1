@@ -708,6 +708,7 @@ Public Class form_mainmgr
             End While
             chooseall = False
             custypeall = False
+            chk_choosetypeall.Checked = False
             pal_price_packet.Visible = False
             txt_promotionprice.Enabled = False
             txt_qtyfree.Enabled = False
