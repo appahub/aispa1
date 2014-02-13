@@ -67,7 +67,7 @@ Public Class classquery
                 returnval = True
             End If
         Catch ex As Exception
-            'MsgBox("sql wrong : " + ex.Message.ToString() + " " + sql)
+            MsgBox("sql wrong : " + ex.Message.ToString() + " " + sql)
             closeDB()
         End Try
         closeDB()
@@ -80,7 +80,7 @@ Public Class classquery
             cmd = New SqlCommand(sql, con)
             returnval.Load(cmd.ExecuteReader())
         Catch ex As Exception
-            MsgBox("sql wrong : " + ex.Message.ToString() + "/n/n" + sql)
+            'MsgBox("sql wrong : " + ex.Message.ToString() + "/n/n" + sql)
             closeDB()
             returnval = Nothing
             closeDB()
