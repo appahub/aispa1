@@ -24,12 +24,12 @@ Partial Class form_empserv
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.grid_servemp = New System.Windows.Forms.DataGridView()
-        Me.btn_confirm = New System.Windows.Forms.Button()
-        Me.btn_cancle = New System.Windows.Forms.Button()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.type = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.haveemp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_confirm = New System.Windows.Forms.Button()
+        Me.btn_cancle = New System.Windows.Forms.Button()
         CType(Me.grid_servemp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,24 +53,6 @@ Partial Class form_empserv
         Me.grid_servemp.Name = "grid_servemp"
         Me.grid_servemp.Size = New System.Drawing.Size(550, 182)
         Me.grid_servemp.TabIndex = 1
-        '
-        'btn_confirm
-        '
-        Me.btn_confirm.Location = New System.Drawing.Point(65, 245)
-        Me.btn_confirm.Name = "btn_confirm"
-        Me.btn_confirm.Size = New System.Drawing.Size(134, 40)
-        Me.btn_confirm.TabIndex = 2
-        Me.btn_confirm.Text = "ยืนยัน"
-        Me.btn_confirm.UseVisualStyleBackColor = True
-        '
-        'btn_cancle
-        '
-        Me.btn_cancle.Location = New System.Drawing.Point(205, 245)
-        Me.btn_cancle.Name = "btn_cancle"
-        Me.btn_cancle.Size = New System.Drawing.Size(134, 40)
-        Me.btn_cancle.TabIndex = 3
-        Me.btn_cancle.Text = "ยกเลิก"
-        Me.btn_cancle.UseVisualStyleBackColor = True
         '
         'Column1
         '
@@ -98,6 +80,24 @@ Partial Class form_empserv
         Me.haveemp.Name = "haveemp"
         Me.haveemp.ReadOnly = True
         Me.haveemp.Width = 160
+        '
+        'btn_confirm
+        '
+        Me.btn_confirm.Location = New System.Drawing.Point(65, 245)
+        Me.btn_confirm.Name = "btn_confirm"
+        Me.btn_confirm.Size = New System.Drawing.Size(134, 40)
+        Me.btn_confirm.TabIndex = 2
+        Me.btn_confirm.Text = "ยืนยัน"
+        Me.btn_confirm.UseVisualStyleBackColor = True
+        '
+        'btn_cancle
+        '
+        Me.btn_cancle.Location = New System.Drawing.Point(205, 245)
+        Me.btn_cancle.Name = "btn_cancle"
+        Me.btn_cancle.Size = New System.Drawing.Size(134, 40)
+        Me.btn_cancle.TabIndex = 3
+        Me.btn_cancle.Text = "ยกเลิก"
+        Me.btn_cancle.UseVisualStyleBackColor = True
         '
         'form_empserv
         '

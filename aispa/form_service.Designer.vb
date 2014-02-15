@@ -32,6 +32,18 @@ Partial Class form_service
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.panel_afterbuy = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.grid_usedtobuy = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pal_showafterchoosecus = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.grid_packet = New System.Windows.Forms.DataGridView()
@@ -97,6 +109,8 @@ Partial Class form_service
         Me.prod_qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.liservlist_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_delservlist = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -113,6 +127,8 @@ Partial Class form_service
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.lbl_buysts = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.grid_servchoice = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -121,9 +137,11 @@ Partial Class form_service
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promid2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_cusid_use = New System.Windows.Forms.TextBox()
         Me.txt_custypeid_use = New System.Windows.Forms.TextBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pal_promuse = New System.Windows.Forms.Panel()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.grid_promuse = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn4 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -138,16 +156,16 @@ Partial Class form_service
         Me.DataGridViewTextBoxColumn32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_chooseemp = New System.Windows.Forms.Button()
         Me.btn_choosecus_use = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btn_clearservuse = New System.Windows.Forms.Button()
         Me.txt_cusname_use = New System.Windows.Forms.TextBox()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.btn_addservuse = New System.Windows.Forms.Button()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btn_delservuse = New System.Windows.Forms.Button()
         Me.dtp_servuse = New System.Windows.Forms.DateTimePicker()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_servid_use = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.grp_detailprom = New System.Windows.Forms.GroupBox()
         Me.grid_detailprom = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn5 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -162,8 +180,6 @@ Partial Class form_service
         Me.Label27 = New System.Windows.Forms.Label()
         Me.grid_resultuse = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Label37 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.grid_servuse = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn6 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -172,10 +188,27 @@ Partial Class form_service
         Me.DataGridViewTextBoxColumn40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promname2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promid3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pal_showafter = New System.Windows.Forms.Panel()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.grid_showafter = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt_useid = New System.Windows.Forms.TextBox()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
+        Me.panel_afterbuy.SuspendLayout()
+        CType(Me.grid_usedtobuy, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pal_showafterchoosecus.SuspendLayout()
         CType(Me.grid_packet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_chooseprom, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,13 +225,15 @@ Partial Class form_service
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
         CType(Me.grid_servchoice, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
+        Me.pal_promuse.SuspendLayout()
         CType(Me.grid_promuse, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        Me.grp_detailprom.SuspendLayout()
         CType(Me.grid_detailprom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_resultuse, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.grid_servuse, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pal_showafter.SuspendLayout()
+        CType(Me.grid_showafter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -210,6 +245,7 @@ Partial Class form_service
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.White
+        Me.SplitContainer1.Panel1.Controls.Add(Me.panel_afterbuy)
         Me.SplitContainer1.Panel1.Controls.Add(Me.pal_showafterchoosecus)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label8)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label4)
@@ -246,6 +282,96 @@ Partial Class form_service
         Me.SplitContainer1.Size = New System.Drawing.Size(1260, 434)
         Me.SplitContainer1.SplitterDistance = 679
         Me.SplitContainer1.TabIndex = 2
+        '
+        'panel_afterbuy
+        '
+        Me.panel_afterbuy.Controls.Add(Me.Label22)
+        Me.panel_afterbuy.Controls.Add(Me.grid_usedtobuy)
+        Me.panel_afterbuy.Location = New System.Drawing.Point(359, 46)
+        Me.panel_afterbuy.Name = "panel_afterbuy"
+        Me.panel_afterbuy.Size = New System.Drawing.Size(307, 183)
+        Me.panel_afterbuy.TabIndex = 129
+        Me.panel_afterbuy.Visible = False
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(3, 15)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(110, 20)
+        Me.Label22.TabIndex = 122
+        Me.Label22.Text = "โปรโมชั่นที่ซื้อไป"
+        '
+        'grid_usedtobuy
+        '
+        Me.grid_usedtobuy.AllowUserToAddRows = False
+        Me.grid_usedtobuy.AllowUserToDeleteRows = False
+        Me.grid_usedtobuy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_usedtobuy.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49, Me.DataGridViewTextBoxColumn50, Me.DataGridViewTextBoxColumn51, Me.DataGridViewTextBoxColumn52, Me.DataGridViewTextBoxColumn53, Me.DataGridViewTextBoxColumn54, Me.DataGridViewTextBoxColumn55, Me.DataGridViewTextBoxColumn56})
+        Me.grid_usedtobuy.Location = New System.Drawing.Point(3, 38)
+        Me.grid_usedtobuy.Name = "grid_usedtobuy"
+        Me.grid_usedtobuy.Size = New System.Drawing.Size(301, 128)
+        Me.grid_usedtobuy.TabIndex = 121
+        '
+        'DataGridViewTextBoxColumn48
+        '
+        Me.DataGridViewTextBoxColumn48.HeaderText = "ชื่อโปรโมชั่น / แพ็คเกจ"
+        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        Me.DataGridViewTextBoxColumn48.ReadOnly = True
+        Me.DataGridViewTextBoxColumn48.Width = 170
+        '
+        'DataGridViewTextBoxColumn49
+        '
+        Me.DataGridViewTextBoxColumn49.HeaderText = "ประเภท"
+        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        Me.DataGridViewTextBoxColumn49.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn50
+        '
+        Me.DataGridViewTextBoxColumn50.HeaderText = "ราคา"
+        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
+        Me.DataGridViewTextBoxColumn50.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn51
+        '
+        Me.DataGridViewTextBoxColumn51.HeaderText = "สิทธิ์"
+        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
+        Me.DataGridViewTextBoxColumn51.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn52
+        '
+        Me.DataGridViewTextBoxColumn52.HeaderText = "flag"
+        Me.DataGridViewTextBoxColumn52.Name = "DataGridViewTextBoxColumn52"
+        Me.DataGridViewTextBoxColumn52.ReadOnly = True
+        Me.DataGridViewTextBoxColumn52.Visible = False
+        '
+        'DataGridViewTextBoxColumn53
+        '
+        Me.DataGridViewTextBoxColumn53.HeaderText = "prom_id"
+        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
+        Me.DataGridViewTextBoxColumn53.ReadOnly = True
+        Me.DataGridViewTextBoxColumn53.Visible = False
+        '
+        'DataGridViewTextBoxColumn54
+        '
+        Me.DataGridViewTextBoxColumn54.HeaderText = "prom_regismem"
+        Me.DataGridViewTextBoxColumn54.Name = "DataGridViewTextBoxColumn54"
+        Me.DataGridViewTextBoxColumn54.ReadOnly = True
+        Me.DataGridViewTextBoxColumn54.Visible = False
+        '
+        'DataGridViewTextBoxColumn55
+        '
+        Me.DataGridViewTextBoxColumn55.HeaderText = "prom_start"
+        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
+        Me.DataGridViewTextBoxColumn55.ReadOnly = True
+        Me.DataGridViewTextBoxColumn55.Visible = False
+        '
+        'DataGridViewTextBoxColumn56
+        '
+        Me.DataGridViewTextBoxColumn56.HeaderText = "prom_end"
+        Me.DataGridViewTextBoxColumn56.Name = "DataGridViewTextBoxColumn56"
+        Me.DataGridViewTextBoxColumn56.ReadOnly = True
+        Me.DataGridViewTextBoxColumn56.Visible = False
         '
         'pal_showafterchoosecus
         '
@@ -579,7 +705,7 @@ Partial Class form_service
         'txt_servid
         '
         Me.txt_servid.Enabled = False
-        Me.txt_servid.Location = New System.Drawing.Point(151, 12)
+        Me.txt_servid.Location = New System.Drawing.Point(151, 16)
         Me.txt_servid.Name = "txt_servid"
         Me.txt_servid.Size = New System.Drawing.Size(167, 26)
         Me.txt_servid.TabIndex = 1
@@ -747,7 +873,7 @@ Partial Class form_service
         Me.grid_showservlist.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.grid_showservlist.ColumnHeadersHeight = 30
         Me.grid_showservlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.grid_showservlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.del, Me.runno, Me.prod_name, Me.prod_qty, Me.unit, Me.liservlist_id})
+        Me.grid_showservlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.del, Me.runno, Me.prod_name, Me.prod_qty, Me.unit, Me.liservlist_id, Me.promname1, Me.promid})
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
@@ -801,6 +927,19 @@ Partial Class form_service
         Me.liservlist_id.Name = "liservlist_id"
         Me.liservlist_id.Visible = False
         Me.liservlist_id.Width = 110
+        '
+        'promname1
+        '
+        Me.promname1.HeaderText = "โปรโมชั่น"
+        Me.promname1.Name = "promname1"
+        Me.promname1.ReadOnly = True
+        '
+        'promid
+        '
+        Me.promid.HeaderText = "promid"
+        Me.promid.Name = "promid"
+        Me.promid.ReadOnly = True
+        Me.promid.Visible = False
         '
         'Panel1
         '
@@ -982,18 +1121,22 @@ Partial Class form_service
         'SplitContainer2.Panel1
         '
         Me.SplitContainer2.Panel1.BackColor = System.Drawing.Color.White
+        Me.SplitContainer2.Panel1.Controls.Add(Me.txt_useid)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.pal_showafter)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.lbl_buysts)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Label18)
         Me.SplitContainer2.Panel1.Controls.Add(Me.Label14)
         Me.SplitContainer2.Panel1.Controls.Add(Me.grid_servchoice)
         Me.SplitContainer2.Panel1.Controls.Add(Me.txt_cusid_use)
         Me.SplitContainer2.Panel1.Controls.Add(Me.txt_custypeid_use)
-        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel2)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.pal_promuse)
         Me.SplitContainer2.Panel1.Controls.Add(Me.btn_chooseemp)
         Me.SplitContainer2.Panel1.Controls.Add(Me.btn_choosecus_use)
-        Me.SplitContainer2.Panel1.Controls.Add(Me.Button6)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.btn_clearservuse)
         Me.SplitContainer2.Panel1.Controls.Add(Me.txt_cusname_use)
-        Me.SplitContainer2.Panel1.Controls.Add(Me.Button7)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.btn_addservuse)
         Me.SplitContainer2.Panel1.Controls.Add(Me.Label23)
-        Me.SplitContainer2.Panel1.Controls.Add(Me.Button4)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.btn_delservuse)
         Me.SplitContainer2.Panel1.Controls.Add(Me.dtp_servuse)
         Me.SplitContainer2.Panel1.Controls.Add(Me.Label24)
         Me.SplitContainer2.Panel1.Controls.Add(Me.txt_servid_use)
@@ -1003,7 +1146,7 @@ Partial Class form_service
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.BackColor = System.Drawing.Color.White
-        Me.SplitContainer2.Panel2.Controls.Add(Me.GroupBox1)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.grp_detailprom)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Label26)
         Me.SplitContainer2.Panel2.Controls.Add(Me.cbo_searchuse)
         Me.SplitContainer2.Panel2.Controls.Add(Me.btn_searchuse)
@@ -1015,10 +1158,28 @@ Partial Class form_service
         Me.SplitContainer2.SplitterDistance = 679
         Me.SplitContainer2.TabIndex = 4
         '
+        'lbl_buysts
+        '
+        Me.lbl_buysts.AutoSize = True
+        Me.lbl_buysts.Location = New System.Drawing.Point(480, 13)
+        Me.lbl_buysts.Name = "lbl_buysts"
+        Me.lbl_buysts.Size = New System.Drawing.Size(66, 20)
+        Me.lbl_buysts.TabIndex = 131
+        Me.lbl_buysts.Text = "Label21"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(358, 13)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(104, 20)
+        Me.Label18.TabIndex = 130
+        Me.Label18.Text = "สถานะการสั่งซื้อ"
+        '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(11, 195)
+        Me.Label14.Location = New System.Drawing.Point(22, 210)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(150, 20)
         Me.Label14.TabIndex = 128
@@ -1031,15 +1192,15 @@ Partial Class form_service
         Me.grid_servchoice.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.grid_servchoice.ColumnHeadersHeight = 30
         Me.grid_servchoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.grid_servchoice.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn3, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19})
-        Me.grid_servchoice.Location = New System.Drawing.Point(3, 218)
+        Me.grid_servchoice.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn3, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.promname, Me.promid2})
+        Me.grid_servchoice.Location = New System.Drawing.Point(23, 233)
         Me.grid_servchoice.Name = "grid_servchoice"
-        Me.grid_servchoice.Size = New System.Drawing.Size(664, 144)
+        Me.grid_servchoice.Size = New System.Drawing.Size(644, 129)
         Me.grid_servchoice.TabIndex = 129
         '
         'DataGridViewCheckBoxColumn3
         '
-        Me.DataGridViewCheckBoxColumn3.HeaderText = "ลบรายการ"
+        Me.DataGridViewCheckBoxColumn3.HeaderText = "ใช้บริการ"
         Me.DataGridViewCheckBoxColumn3.Name = "DataGridViewCheckBoxColumn3"
         Me.DataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewCheckBoxColumn3.Width = 50
@@ -1078,6 +1239,18 @@ Partial Class form_service
         Me.DataGridViewTextBoxColumn19.Visible = False
         Me.DataGridViewTextBoxColumn19.Width = 110
         '
+        'promname
+        '
+        Me.promname.HeaderText = "โปรโมชั่น"
+        Me.promname.Name = "promname"
+        Me.promname.ReadOnly = True
+        '
+        'promid2
+        '
+        Me.promid2.HeaderText = "promid2"
+        Me.promid2.Name = "promid2"
+        Me.promid2.Visible = False
+        '
         'txt_cusid_use
         '
         Me.txt_cusid_use.Location = New System.Drawing.Point(31, 125)
@@ -1094,15 +1267,14 @@ Partial Class form_service
         Me.txt_custypeid_use.TabIndex = 127
         Me.txt_custypeid_use.Visible = False
         '
-        'Panel2
+        'pal_promuse
         '
-        Me.Panel2.Controls.Add(Me.Label16)
-        Me.Panel2.Controls.Add(Me.grid_promuse)
-        Me.Panel2.Location = New System.Drawing.Point(359, 23)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(307, 173)
-        Me.Panel2.TabIndex = 125
-        Me.Panel2.Visible = False
+        Me.pal_promuse.Controls.Add(Me.Label16)
+        Me.pal_promuse.Controls.Add(Me.grid_promuse)
+        Me.pal_promuse.Location = New System.Drawing.Point(359, 39)
+        Me.pal_promuse.Name = "pal_promuse"
+        Me.pal_promuse.Size = New System.Drawing.Size(307, 173)
+        Me.pal_promuse.TabIndex = 125
         '
         'Label16
         '
@@ -1208,16 +1380,16 @@ Partial Class form_service
         Me.btn_choosecus_use.TabIndex = 102
         Me.btn_choosecus_use.UseVisualStyleBackColor = True
         '
-        'Button6
+        'btn_clearservuse
         '
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button6.Image = Global.aispa.My.Resources.Resources.cancle_icon
-        Me.Button6.Location = New System.Drawing.Point(223, 367)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(83, 40)
-        Me.Button6.TabIndex = 94
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btn_clearservuse.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.btn_clearservuse.Image = Global.aispa.My.Resources.Resources.cancle_icon
+        Me.btn_clearservuse.Location = New System.Drawing.Point(223, 367)
+        Me.btn_clearservuse.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_clearservuse.Name = "btn_clearservuse"
+        Me.btn_clearservuse.Size = New System.Drawing.Size(83, 40)
+        Me.btn_clearservuse.TabIndex = 94
+        Me.btn_clearservuse.UseVisualStyleBackColor = True
         '
         'txt_cusname_use
         '
@@ -1226,16 +1398,16 @@ Partial Class form_service
         Me.txt_cusname_use.Size = New System.Drawing.Size(167, 26)
         Me.txt_cusname_use.TabIndex = 1
         '
-        'Button7
+        'btn_addservuse
         '
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button7.Image = Global.aispa.My.Resources.Resources.add_icon
-        Me.Button7.Location = New System.Drawing.Point(50, 368)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(79, 40)
-        Me.Button7.TabIndex = 93
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btn_addservuse.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.btn_addservuse.Image = Global.aispa.My.Resources.Resources.add_icon
+        Me.btn_addservuse.Location = New System.Drawing.Point(123, 368)
+        Me.btn_addservuse.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_addservuse.Name = "btn_addservuse"
+        Me.btn_addservuse.Size = New System.Drawing.Size(79, 40)
+        Me.btn_addservuse.TabIndex = 93
+        Me.btn_addservuse.UseVisualStyleBackColor = True
         '
         'Label23
         '
@@ -1246,17 +1418,17 @@ Partial Class form_service
         Me.Label23.TabIndex = 98
         Me.Label23.Text = "รหัสลูกค้า"
         '
-        'Button4
+        'btn_delservuse
         '
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button4.Image = Global.aispa.My.Resources.Resources.delete_icon
-        Me.Button4.Location = New System.Drawing.Point(129, 368)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(79, 40)
-        Me.Button4.TabIndex = 96
-        Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.Visible = False
+        Me.btn_delservuse.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.btn_delservuse.Image = Global.aispa.My.Resources.Resources.delete_icon
+        Me.btn_delservuse.Location = New System.Drawing.Point(129, 368)
+        Me.btn_delservuse.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_delservuse.Name = "btn_delservuse"
+        Me.btn_delservuse.Size = New System.Drawing.Size(79, 40)
+        Me.btn_delservuse.TabIndex = 96
+        Me.btn_delservuse.UseVisualStyleBackColor = True
+        Me.btn_delservuse.Visible = False
         '
         'dtp_servuse
         '
@@ -1292,16 +1464,16 @@ Partial Class form_service
         Me.Label25.TabIndex = 0
         Me.Label25.Text = "รหัสการสั่งซื้อบริการ"
         '
-        'GroupBox1
+        'grp_detailprom
         '
-        Me.GroupBox1.Controls.Add(Me.grid_detailprom)
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 297)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(551, 145)
-        Me.GroupBox1.TabIndex = 105
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "รายการบริการของ โปรโมชั่น"
-        Me.GroupBox1.Visible = False
+        Me.grp_detailprom.Controls.Add(Me.grid_detailprom)
+        Me.grp_detailprom.Location = New System.Drawing.Point(18, 297)
+        Me.grp_detailprom.Name = "grp_detailprom"
+        Me.grp_detailprom.Size = New System.Drawing.Size(551, 145)
+        Me.grp_detailprom.TabIndex = 105
+        Me.grp_detailprom.TabStop = False
+        Me.grp_detailprom.Text = "รายการบริการของ โปรโมชั่น"
+        Me.grp_detailprom.Visible = False
         '
         'grid_detailprom
         '
@@ -1364,9 +1536,9 @@ Partial Class form_service
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label26.Location = New System.Drawing.Point(62, 70)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(135, 25)
+        Me.Label26.Size = New System.Drawing.Size(158, 25)
         Me.Label26.TabIndex = 104
-        Me.Label26.Text = "รายการบริการ"
+        Me.Label26.Text = "รายการใช้บริการ"
         '
         'cbo_searchuse
         '
@@ -1422,36 +1594,12 @@ Partial Class form_service
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.Button9)
-        Me.Panel3.Controls.Add(Me.Label37)
         Me.Panel3.Controls.Add(Me.Button10)
         Me.Panel3.Controls.Add(Me.grid_servuse)
         Me.Panel3.Location = New System.Drawing.Point(-2, 437)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1260, 271)
         Me.Panel3.TabIndex = 5
-        '
-        'Button9
-        '
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button9.Image = Global.aispa.My.Resources.Resources.delete_icon
-        Me.Button9.Location = New System.Drawing.Point(165, 38)
-        Me.Button9.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(76, 40)
-        Me.Button9.TabIndex = 126
-        Me.Button9.UseVisualStyleBackColor = True
-        Me.Button9.Visible = False
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label37.Location = New System.Drawing.Point(18, 0)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(200, 25)
-        Me.Label37.TabIndex = 105
-        Me.Label37.Text = "รายละเอียดการบริการ"
         '
         'Button10
         '
@@ -1478,7 +1626,7 @@ Partial Class form_service
         Me.grid_servuse.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.grid_servuse.ColumnHeadersHeight = 30
         Me.grid_servuse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.grid_servuse.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn6, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42})
+        Me.grid_servuse.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn6, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42, Me.promname2, Me.promid3})
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
@@ -1533,6 +1681,116 @@ Partial Class form_service
         Me.DataGridViewTextBoxColumn42.Visible = False
         Me.DataGridViewTextBoxColumn42.Width = 110
         '
+        'promname2
+        '
+        Me.promname2.HeaderText = "โปรโมชั่น"
+        Me.promname2.Name = "promname2"
+        Me.promname2.ReadOnly = True
+        '
+        'promid3
+        '
+        Me.promid3.HeaderText = "promid3"
+        Me.promid3.Name = "promid3"
+        Me.promid3.Visible = False
+        '
+        'pal_showafter
+        '
+        Me.pal_showafter.Controls.Add(Me.Label21)
+        Me.pal_showafter.Controls.Add(Me.grid_showafter)
+        Me.pal_showafter.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.pal_showafter.Location = New System.Drawing.Point(355, 39)
+        Me.pal_showafter.Name = "pal_showafter"
+        Me.pal_showafter.Size = New System.Drawing.Size(323, 173)
+        Me.pal_showafter.TabIndex = 126
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(16, 16)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(118, 18)
+        Me.Label21.TabIndex = 122
+        Me.Label21.Text = "โปรโมชั่นที่คุณเลือก"
+        '
+        'grid_showafter
+        '
+        Me.grid_showafter.AllowUserToAddRows = False
+        Me.grid_showafter.AllowUserToDeleteRows = False
+        Me.grid_showafter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_showafter.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47})
+        Me.grid_showafter.Location = New System.Drawing.Point(3, 42)
+        Me.grid_showafter.Name = "grid_showafter"
+        Me.grid_showafter.Size = New System.Drawing.Size(305, 128)
+        Me.grid_showafter.TabIndex = 121
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.HeaderText = "ชื่อโปรโมชั่น / แพ็คเกจ"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.ReadOnly = True
+        Me.DataGridViewTextBoxColumn20.Width = 170
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.HeaderText = "ประเภท"
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        Me.DataGridViewTextBoxColumn21.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn22
+        '
+        Me.DataGridViewTextBoxColumn22.HeaderText = "ราคา"
+        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
+        Me.DataGridViewTextBoxColumn22.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn23
+        '
+        Me.DataGridViewTextBoxColumn23.HeaderText = "สิทธิ์"
+        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+        Me.DataGridViewTextBoxColumn23.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn43
+        '
+        Me.DataGridViewTextBoxColumn43.HeaderText = "flag"
+        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
+        Me.DataGridViewTextBoxColumn43.ReadOnly = True
+        Me.DataGridViewTextBoxColumn43.Visible = False
+        '
+        'DataGridViewTextBoxColumn44
+        '
+        Me.DataGridViewTextBoxColumn44.HeaderText = "prom_id"
+        Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
+        Me.DataGridViewTextBoxColumn44.ReadOnly = True
+        Me.DataGridViewTextBoxColumn44.Visible = False
+        '
+        'DataGridViewTextBoxColumn45
+        '
+        Me.DataGridViewTextBoxColumn45.HeaderText = "prom_regismem"
+        Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
+        Me.DataGridViewTextBoxColumn45.ReadOnly = True
+        Me.DataGridViewTextBoxColumn45.Visible = False
+        '
+        'DataGridViewTextBoxColumn46
+        '
+        Me.DataGridViewTextBoxColumn46.HeaderText = "prom_start"
+        Me.DataGridViewTextBoxColumn46.Name = "DataGridViewTextBoxColumn46"
+        Me.DataGridViewTextBoxColumn46.ReadOnly = True
+        Me.DataGridViewTextBoxColumn46.Visible = False
+        '
+        'DataGridViewTextBoxColumn47
+        '
+        Me.DataGridViewTextBoxColumn47.HeaderText = "prom_end"
+        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
+        Me.DataGridViewTextBoxColumn47.ReadOnly = True
+        Me.DataGridViewTextBoxColumn47.Visible = False
+        '
+        'txt_useid
+        '
+        Me.txt_useid.Location = New System.Drawing.Point(32, 186)
+        Me.txt_useid.Name = "txt_useid"
+        Me.txt_useid.Size = New System.Drawing.Size(83, 26)
+        Me.txt_useid.TabIndex = 132
+        Me.txt_useid.Visible = False
+        '
         'form_service
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1547,6 +1805,9 @@ Partial Class form_service
         Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
+        Me.panel_afterbuy.ResumeLayout(False)
+        Me.panel_afterbuy.PerformLayout()
+        CType(Me.grid_usedtobuy, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pal_showafterchoosecus.ResumeLayout(False)
         Me.pal_showafterchoosecus.PerformLayout()
         CType(Me.grid_packet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1567,15 +1828,17 @@ Partial Class form_service
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.grid_servchoice, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.pal_promuse.ResumeLayout(False)
+        Me.pal_promuse.PerformLayout()
         CType(Me.grid_promuse, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
+        Me.grp_detailprom.ResumeLayout(False)
         CType(Me.grid_detailprom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_resultuse, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         CType(Me.grid_servuse, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pal_showafter.ResumeLayout(False)
+        Me.pal_showafter.PerformLayout()
+        CType(Me.grid_showafter, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1614,12 +1877,6 @@ Partial Class form_service
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents grid_chooseprom As System.Windows.Forms.DataGridView
     Friend WithEvents pal_showafterchoosecus As System.Windows.Forms.Panel
-    Friend WithEvents del As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents runno As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prod_name As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents prod_qty As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents unit As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents liservlist_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents price_normal As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
@@ -1642,7 +1899,7 @@ Partial Class form_service
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents pal_promuse As System.Windows.Forms.Panel
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents grid_promuse As System.Windows.Forms.DataGridView
@@ -1660,14 +1917,14 @@ Partial Class form_service
     Friend WithEvents btn_choosecus_use As System.Windows.Forms.Button
     Friend WithEvents txt_cusname_use As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents btn_delservuse As System.Windows.Forms.Button
+    Friend WithEvents btn_clearservuse As System.Windows.Forms.Button
+    Friend WithEvents btn_addservuse As System.Windows.Forms.Button
     Friend WithEvents dtp_servuse As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents txt_servid_use As System.Windows.Forms.TextBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents grp_detailprom As System.Windows.Forms.GroupBox
     Friend WithEvents grid_detailprom As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewCheckBoxColumn5 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn33 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1682,16 +1939,8 @@ Partial Class form_service
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents grid_resultuse As System.Windows.Forms.DataGridView
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents Button9 As System.Windows.Forms.Button
-    Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents grid_servuse As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewCheckBoxColumn6 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn38 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn39 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn40 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn41 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn42 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1714,10 +1963,55 @@ Partial Class form_service
     Friend WithEvents txt_cusid_use As System.Windows.Forms.TextBox
     Friend WithEvents txt_custypeid_use As System.Windows.Forms.TextBox
     Friend WithEvents grid_servchoice As System.Windows.Forms.DataGridView
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents lbl_buysts As System.Windows.Forms.Label
+    Friend WithEvents panel_afterbuy As System.Windows.Forms.Panel
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents grid_usedtobuy As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn48 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn49 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn50 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn51 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn52 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn53 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn54 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn55 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn56 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents del As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents runno As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prod_name As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prod_qty As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents unit As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents liservlist_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents promname1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents promid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn3 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn18 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn19 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents promname As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents promid2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn6 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn38 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn39 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn40 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn41 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn42 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents promname2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents promid3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents pal_showafter As System.Windows.Forms.Panel
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents grid_showafter As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn20 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn21 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn22 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn23 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn43 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn44 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn45 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn46 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn47 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txt_useid As System.Windows.Forms.TextBox
 End Class

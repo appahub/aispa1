@@ -36,7 +36,7 @@ Public Class form_showservlist
         If (servname <> "" And servid <> "") Then
             form_service.txt_servname.Text = servname
             'Dim row As String() = New String() {False, runno, servname, servtype, servprice, empname, servid, empid}
-            Dim row As String() = New String() {False, runno, servname, servtype, servprice, servid}
+            Dim row As String() = New String() {False, runno, servname, servtype, servprice, servid, "-", ""}
             If gridnow.Rows.Count > 0 Then
                 For i As Integer = 0 To gridnow.Rows.Count - 1
                     If gridnow.Rows(i).Cells(1).Value <> "" Then
