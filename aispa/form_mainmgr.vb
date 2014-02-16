@@ -870,7 +870,7 @@ Public Class form_mainmgr
                 ElseIf prodtypeid = 1 Then ' แถม ฟรี
                     Dim qtyint As Integer = 0
                     Dim qtyusedint As Integer = 0
-                    If Integer.TryParse(qtyfree, qtyint) Or Integer.TryParse(qtyfree, qtyusedint) Then
+                    If Integer.TryParse(qtyfree, qtyint) Or Integer.TryParse(qtyused, qtyusedint) Then
                         Dim typepromfree As String = "F"
                         Dim prom_price_packet As Double = 0.0
                         If chooseall = True Then

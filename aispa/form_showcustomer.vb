@@ -86,11 +86,11 @@ Public Class form_showcustomer
         For Each rows As DataRow In mytbl.Rows
             If type = "prom" Then
                 'If Not (rows(4).ToString = "F" And rows(1).ToString = "แถม-ฟรี") Then
-                Dim row As String() = New String() {False, rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8)}
+                Dim row As String() = New String() {False, rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8), rows(9)}
                 mygrid.Rows.Add(row)
                 'End If
             ElseIf type = "promnotchoose" Then
-                Dim row As String() = New String() {rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8)}
+                Dim row As String() = New String() {rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8), rows(9)}
                 mygrid.Rows.Add(row)
             End If
         Next
@@ -114,11 +114,11 @@ Public Class form_showcustomer
         For Each rows As DataRow In dataTable.Rows
             If type = "prom" Then
                 'If Not (rows(4).ToString = "F" And rows(1).ToString = "แถม-ฟรี") Then
-                Dim row As String() = New String() {False, rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8)}
+                Dim row As String() = New String() {False, rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8), rows(9)}
                 mygrid.Rows.Add(row)
                 'End If
             ElseIf type = "promnotchoose" Then
-                Dim row As String() = New String() {rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8)}
+                Dim row As String() = New String() {rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8), rows(9)}
                 mygrid.Rows.Add(row)
             End If
         Next

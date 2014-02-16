@@ -65,6 +65,10 @@ Public Class form_service
             pal_showafterchoosecus.Visible = False
             UpdateDatainGrid(0)
         ElseIf TabControl1.SelectedIndex = 1 Then
+            grp_detailprom.Visible = False
+            btn_choosecus_use.Visible = True
+            txt_cusname_use.Enabled = True
+            txt_servid_use.Text = ""
             pal_promuse.Visible = False
             grid_promuse.Rows.Clear()
             grid_servchoice.Rows.Clear()
@@ -80,6 +84,10 @@ Public Class form_service
             txt_cusname_use.Text = ""
             txt_cusid_use.Text = ""
             txt_custypeid_use.Text = ""
+            service_empid.Clear()
+            service_id.Clear()
+            service_type.Clear()
+            service_name.Clear()
         End If
         
     End Sub
@@ -179,7 +187,15 @@ Public Class form_service
             ' แยกว่าพนักงานคนใหนทำบริการ ของรายการบริการ หรือ โปรโมชั่น 
             Dim normalservice As ArrayList = New ArrayList
             Dim promotionservice As ArrayList = New ArrayList
+            Dim chkmoney As String = "select convert(varchar,cus_money,1) money, convert(varchar,cus_amount,1) amount from customer where cus_id = " & cus_id
+            Dim usermoney As DataTable = Obj_query.selectDatatoGrid(chkmoney)
 
+            If Double.Parse(usermoney.Rows(0)(0)) < Double.Parse(price_all.Text) Then ' usermoney.Rows(0)(0) = usermoney ที่จ่าย
+                If Double.Parse(usermoney.Rows(0)(1)) < Double.Parse(price_all.Text) Then ' usermoney.Rows(0)(0) = usermoney ใช้ได้จริง
+                    MsgBox("ไม่สามารถซื้อบริการได้เนื่องจากวงเงินไม่พอในการใช้งาน")
+                    Exit Sub
+                End If
+            End If
             Dim doinpacketalready As Boolean = False
             For Each rowlist As DataGridViewRow In grid_showservlist.Rows ' เก็บรายการบริการที่เลือกมา
                 normalservice.Add(rowlist.Cells(5).Value)
@@ -227,27 +243,47 @@ Public Class form_service
                                      " ( " & promserv & "," & billid & " )"
                             Next
                             If Obj_query.DMLData(sql) Then
-                                MsgBox("เพิ่มรายการบริการเรียบร้อยแล้ว")
-                                LoadDataTO_page2()
-                                clearData()
-                                frombuy = True
-                                TabControl1.SelectedIndex = 1
-                                txt_servid_use.Text = servid.ToString()
+                                Dim amount As Double = Double.Parse(usermoney.Rows(0)(1)) - priceall
+                                Dim money As Double = Double.Parse(usermoney.Rows(0)(1)) - priceall
+                                If amount < 0 Then
+                                    amount = 0
+                                End If
+                                If money < 0 Then
+                                    money = 0
+                                End If
+                                Dim decreasemoney_sql As String = "update customer set cus_money = " & Double.Parse(usermoney.Rows(0)(0)) - priceall &
+                                    " , cus_amount = " & Double.Parse(usermoney.Rows(0)(1)) - priceall &
+                                    " where cus_id = " & cus_id
+                                If Obj_query.DMLData(decreasemoney_sql) Then
+                                    MsgBox("เพิ่มรายการบริการเรียบร้อยแล้ว")
+                                    LoadDataTO_page2()
+                                    clearData()
+                                    frombuy = True
+                                    TabControl1.SelectedIndex = 1
+                                    txt_servid_use.Text = servid.ToString()
+                                End If
+
+
                             End If
-                        Else
-                            MsgBox("เพิ่มรายการบริการเรียบร้อยแล้ว")
-                            LoadDataTO_page2()
-                            clearData()
-                            frombuy = True
-                            TabControl1.SelectedIndex = 1
-                            txt_servid_use.Text = servid.ToString()
+                            Else
+                                Dim decreasemoney_sql As String = "update customer set cus_money = " & Double.Parse(usermoney.Rows(0)(0)) - priceall &
+                                        " , cus_amount = " & Double.Parse(usermoney.Rows(0)(1)) - priceall &
+                                        " where cus_id = " & cus_id
+                                If Obj_query.DMLData(decreasemoney_sql) Then
+                                    MsgBox("เพิ่มรายการบริการเรียบร้อยแล้ว")
+                                    LoadDataTO_page2()
+                                    clearData()
+                                    frombuy = True
+                                    TabControl1.SelectedIndex = 1
+                                    txt_servid_use.Text = servid.ToString()
+                                End If
+                            End If
                         End If
                     End If
                 End If
+            Else
+                MsgBox("กรุณาระบุข้อมูลให้ถูกต้อง หรือ ยังไม่ได้กำหนดพนักงานที่ให้บริการ")
             End If
-        Else
-            MsgBox("กรุณาระบุข้อมูลให้ถูกต้อง หรือ ยังไม่ได้กำหนดพนักงานที่ให้บริการ")
-        End If
     End Sub
     Private Sub LoadDataTO_page2()
         txt_cusid_use.Text = txt_cusid.Text
@@ -344,11 +380,11 @@ Public Class form_service
         For Each rows As DataRow In dataTable.Rows
             If type = "prom" Then
                 'If Not (rows(4).ToString = "F" And rows(1).ToString = "แถม-ฟรี") Then
-                Dim row As String() = New String() {False, rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8)}
+                Dim row As String() = New String() {False, rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8), rows(9)}
                 mygrid.Rows.Add(row)
                 'End If
             ElseIf type = "promnotchoose" Then
-                Dim row As String() = New String() {rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8)}
+                Dim row As String() = New String() {rows(0), rows(1), rows(2), rows(3), rows(4), rows(5), rows(6), rows(7), rows(8), rows(9)}
                 mygrid.Rows.Add(row)
             End If
         Next
@@ -372,7 +408,7 @@ Public Class form_service
     End Sub
 
     Private Sub btn_delproduct_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_delproduct.Click
-        btn_delserv.Visible = True
+        btn_delservlist.Visible = True
         For i As Integer = 0 To grid_showservlist.Rows.Count - 1
             grid_showservlist.Rows(i).Cells(0).Value = True
         Next
@@ -416,6 +452,36 @@ Public Class form_service
                     Next
                 End If
             Next
+            If doinpacketalready = False Then ' กรณีที่ รายการบริการที่เลือกไม่ตรงกับ โปรโมชั่นที่ต้องซื้อก่อนหน้านี้เลย
+                rownow = 0
+                For Each promlistforchk As DataGridViewRow In grid_chooseprom.Rows
+                    Dim servlistdatatable As DataTable = get_Promlistall(promlistforchk.Cells(5).Value.ToString)
+                    Dim thispromlist_count As Integer = servlistdatatable.Rows.Count
+                    Dim pname As String = ""
+                    Dim pname_arr As ArrayList = New ArrayList()
+                    For Each promservlist As DataRow In servlistdatatable.Rows ' รายการบริการ แต่ละโปรโมชั่น
+                        For i As Integer = 0 To serv_dontabout_prom.Count - 1 ' รายการบริการที่เลือกมาใน ดาตากริด
+                            If serv_dontabout_prom(i).Cells(1).Value <> "" Then
+                                If serv_dontabout_prom(i).Cells(2).Value.Equals(promservlist(1)) And
+                                    serv_dontabout_prom(i).Cells(3).Value.Equals(promservlist(2)) And
+                                    serv_dontabout_prom(i).Cells(4).Value.Equals(promservlist(3)) Then
+                                    thispromlist_count -= 1
+                                End If
+                            End If
+                        Next
+                        If thispromlist_count = 0 Then
+                            pname = promservlist(1)
+                            pname_arr.Add(promservlist(4))
+                        End If
+                    Next
+                    If thispromlist_count = 0 Then
+                        ' หาวิธีลบมาด้วยว่า ถ้าเกิดเพิ่มโปรโมชั่นนี้ไม่ได้ จะลบ ออกจาก ดาต้ากริดแต่ ตอนนี้ลบและเหมือนมันติด เออเร่อ
+                        MsgBox("คุณสามารถใช้โปรโมชั่น " & pname & " ได้เลยในหน้าจอการใช้บริการ ")
+                        Exit Sub
+                    End If
+                    rownow += 1
+                Next
+            End If
             globalservlist = serv_dontabout_prom
             For Each promlistforchk As DataGridViewRow In grid_packet.Rows
                 Dim servlistdatatable As DataTable = get_Promlistall(promlistforchk.Cells(6).Value.ToString)
@@ -471,18 +537,18 @@ Public Class form_service
                         pricedel += Double.Parse(servlistrow(3))
                     Next
 
-                    If grid_packet.Rows(rownow).Cells(2).Value = "ส่วนลด" Then
+                    If grid_packet.Rows(rownow).Cells(10).Value = "S" Then
                         Dim paymoney As Double = 0
                         pricenow += Double.Parse(grid_packet.Rows(rownow).Cells(3).Value)
                         'If grid_chooseprom.Rows(nowdatais).Cells(5).Value <> "F" Then
                         '    paymoney = Double.Parse(price_all.Text)
                         'End If
                         'priceprom += Double.Parse(grid_chooseprom.Rows(nowdatais).Cells(3).Value) '(pricenornal) '- Double.Parse(grid_chooseprom.Rows(nowdatais).Cells(3).Value))
-                    ElseIf grid_packet.Rows(rownow).Cells(2).Value = "แถม-ฟรี" Then
+                    ElseIf grid_packet.Rows(rownow).Cells(10).Value = "F" Then
                         'ตรงแถมฟรี ยังไงก็ต้อง เช็คว่า คนนี้มาใช้บริการแล้วกี่ครั้งถ้ายังใช่บริการไม่ครบก็ไม่สามารถใช่สิทธิ์ แถมฟรีได้
                         'priceprom += (pricenornal - pricedo)
                         pricenow += pricedo
-                    ElseIf grid_packet.Rows(rownow).Cells(2).Value = "แพ็คเกจ" Then
+                    ElseIf grid_packet.Rows(rownow).Cells(10).Value = "P" Then
                         ' ตรงแพ็คเกจ ก็ต้อง เช็คว่า คนนี้มาใช้บริการครบจำครั้งที่ต้องทำ กับ จำนวนที่แถม แล้วหรือยัง ถ้าครบแล้วก็ต้องจ่ายตังเพิ่ม แต่ถ้ายังก็
                         ' ทำได้เลย โดยการ ลดราคาสิ่งที่ทำ
                         'priceprom += (pricenornal)
@@ -498,36 +564,6 @@ Public Class form_service
                 End If
                 rownow += 1
             Next
-
-            If doinpacketalready = False Then ' กรณีที่ รายการบริการที่เลือกไม่ตรงกับ โปรโมชั่นที่ต้องซื้อก่อนหน้านี้เลย
-                rownow = 0
-                For Each promlistforchk As DataGridViewRow In grid_chooseprom.Rows
-                    Dim servlistdatatable As DataTable = get_Promlistall(promlistforchk.Cells(5).Value.ToString)
-                    Dim thispromlist_count As Integer = servlistdatatable.Rows.Count
-                    Dim pname As String = ""
-                    Dim pname_arr As ArrayList = New ArrayList()
-                    For Each promservlist As DataRow In servlistdatatable.Rows ' รายการบริการ แต่ละโปรโมชั่น
-                        For i As Integer = 0 To serv_dontabout_prom.Count - 1 ' รายการบริการที่เลือกมาใน ดาตากริด
-                            If serv_dontabout_prom(i).Cells(1).Value <> "" Then
-                                If serv_dontabout_prom(i).Cells(2).Value.Equals(promservlist(1)) And
-                                    serv_dontabout_prom(i).Cells(3).Value.Equals(promservlist(2)) And
-                                    serv_dontabout_prom(i).Cells(4).Value.Equals(promservlist(3)) Then
-                                    thispromlist_count -= 1
-                                End If
-                            End If
-                        Next
-                        If thispromlist_count = 0 Then
-                            pname = promservlist(1)
-                            pname_arr.Add(promservlist(4))
-                        End If
-                    Next
-                    If thispromlist_count = 0 Then
-                        ' หาวิธีลบมาด้วยว่า ถ้าเกิดเพิ่มโปรโมชั่นนี้ไม่ได้ จะลบ ออกจาก ดาต้ากริดแต่ ตอนนี้ลบและเหมือนมันติด เออเร่อ
-                        MsgBox("คุณสามารถใช้โปรโมชั่น " & pname & " ได้เลยในหน้าจอการใช้บริการ ")
-                    End If
-                    rownow += 1
-                Next
-            End If
         End If
     End Sub
     Private Function get_Promlistall(ByVal promid As String) As DataTable
@@ -786,18 +822,18 @@ Public Class form_service
                     pricenornal += Double.Parse(servlistrow(3))
                     runno += 1
                 Next
-                If grid_packet.Rows(nowdatais).Cells(2).Value = "ส่วนลด" Then
+                If grid_packet.Rows(nowdatais).Cells(10).Value = "S" Then
                     Dim paymoney As Double = 0
                     pricenow += Double.Parse(grid_packet.Rows(nowdatais).Cells(3).Value)
                     'If grid_chooseprom.Rows(nowdatais).Cells(5).Value <> "F" Then
                     '    paymoney = Double.Parse(price_all.Text)
                     'End If
                     'priceprom += Double.Parse(grid_chooseprom.Rows(nowdatais).Cells(3).Value) '(pricenornal) '- Double.Parse(grid_chooseprom.Rows(nowdatais).Cells(3).Value))
-                ElseIf grid_packet.Rows(nowdatais).Cells(2).Value = "แถม-ฟรี" Then
+                ElseIf grid_packet.Rows(nowdatais).Cells(10).Value = "F" Then
                     'ตรงแถมฟรี ยังไงก็ต้อง เช็คว่า คนนี้มาใช้บริการแล้วกี่ครั้งถ้ายังใช่บริการไม่ครบก็ไม่สามารถใช่สิทธิ์ แถมฟรีได้
                     'priceprom += (pricenornal - pricedo)
                     pricenow += pricedo
-                ElseIf grid_packet.Rows(nowdatais).Cells(2).Value = "แพ็คเกจ" Then
+                ElseIf grid_packet.Rows(nowdatais).Cells(10).Value = "P" Then
                     ' ตรงแพ็คเกจ ก็ต้อง เช็คว่า คนนี้มาใช้บริการครบจำครั้งที่ต้องทำ กับ จำนวนที่แถม แล้วหรือยัง ถ้าครบแล้วก็ต้องจ่ายตังเพิ่ม แต่ถ้ายังก็
                     ' ทำได้เลย โดยการ ลดราคาสิ่งที่ทำ
                     'priceprom += (pricenornal)
@@ -838,16 +874,16 @@ Public Class form_service
                     pricenornal -= Double.Parse(servlistrow(3))
                     pricedelnormal += Double.Parse(servlistrow(3))
                 Next
-                If grid_packet.Rows(nowdatais).Cells(2).Value = "ส่วนลด" Then
+                If grid_packet.Rows(nowdatais).Cells(10).Value = "S" Then
                     'MsgBox("A" & priceprom & " : " & pricenornal)
                     pricenow -= Double.Parse(grid_packet.Rows(nowdatais).Cells(3).Value)
                     'priceprom -= (pricedelnormal - Double.Parse(grid_chooseprom.Rows(nowdatais).Cells(3).Value))
                     'MsgBox("B" & priceprom & " : " & pricenornal)
-                ElseIf grid_packet.Rows(nowdatais).Cells(2).Value = "แถม-ฟรี" Then
+                ElseIf grid_packet.Rows(nowdatais).Cells(10).Value = "F" Then
                     'ตรงแถมฟรี ยังไงก็ต้อง เช็คว่า คนนี้มาใช้บริการแล้วกี่ครั้งถ้ายังใช่บริการไม่ครบก็ไม่สามารถใช่สิทธิ์ แถมฟรีได้
                     'priceprom -= (pricedelnormal - pricedo)
                     pricenow -= pricedo
-                ElseIf grid_packet.Rows(nowdatais).Cells(2).Value = "แพ็คเกจ" Then
+                ElseIf grid_packet.Rows(nowdatais).Cells(10).Value = "P" Then
                     ' ตรงแพ็คเกจ ก็ต้อง เช็คว่า คนนี้มาใช้บริการครบจำครั้งที่ต้องทำ กับ จำนวนที่แถม แล้วหรือยัง ถ้าครบแล้วก็ต้องจ่ายตังเพิ่ม แต่ถ้ายังก็
                     ' ทำได้เลย โดยการ ลดราคาสิ่งที่ทำ
                     'priceprom -= (pricedelnormal)
@@ -974,7 +1010,14 @@ Public Class form_service
             If frombuy = True Then
                 txt_servid_use.Visible = True
                 txt_cusname_use.Enabled = False
+                btn_clearservuse.Visible = False
                 GetPromotion()
+                frombuy = False
+            Else
+                btn_clearservuse.Visible = True
+                txt_cusname_use.Enabled = True
+                txt_servid_use.Visible = False
+                frombuy = False
             End If
         End If
         GetUseservtoGrid()
@@ -1022,6 +1065,7 @@ Public Class form_service
     End Sub
 
     Private Sub grid_promuse_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid_promuse.CellClick
+        grp_detailprom.Visible = True
         If e.ColumnIndex <> 0 Then
             Dim nowdatais As Integer = e.RowIndex
             Dim promservnew As DataTable = get_Promlistall(grid_promuse.Rows(nowdatais).Cells(6).Value) ' โปรโมชั่นที่เลือก
@@ -1087,7 +1131,6 @@ Public Class form_service
                 sql = "insert into use_service (cus_id, serv_id, use_date, use_sts, emp_id) values " &
                         " (" & cusid & ", " & servid & ", '" & usedate & "','S', " & module_emp_id & ") "
             End If
-
             'service_name.Add(servname)
             'service_type.Add(typeinsert)
             'service_id.Add(id)
@@ -1099,8 +1142,11 @@ Public Class form_service
                 For Each r As DataGridViewRow In grid_servuse.Rows
                     For i As Integer = 0 To service_type.Count - 1
                         Dim strforinsert As String = ""
-                        If r.Cells(7).Value = service_id(i) Then
+                        If r.Cells(7).Value = service_id(i) Then ' กรณีที่โปรโมชั่น ตรงกับ เลือกพนักงานที่ตรงกับโปรโมชั่นนั้น
                             strforinsert = useid & "|" & r.Cells(7).Value & "|" & r.Cells(5).Value & "|" & service_empid(i)
+                            servforinsert.Add(strforinsert)
+                        ElseIf r.Cells(5).Value = service_id(i) Then
+                            strforinsert = useid & "|null|" & r.Cells(5).Value & "|" & service_empid(i)
                             servforinsert.Add(strforinsert)
                         End If
                     Next
@@ -1112,14 +1158,26 @@ Public Class form_service
                     sqldetail &= "insert into use_service_detail (use_id, prom_id, liserv_id, emp_id) " &
                         " values (" & data(0) & ", " & data(1) & ", " & data(2) & ", " & data(3) & ")"
                 Next
-
                 If Obj_query.DMLData(sqldetail) Then
-                    If txt_servid_use.Text <> "" Then
-                        sql = "update service set serv_sts = 'S' where serv_id = " & txt_servid_use.Text
+                    If servid <> "" Then
+                        sql = "update service set serv_sts = 'S' where serv_id = " & servid
                         Obj_query.DMLData(sql)
+                    Else
+                        For Each row As String In servforinsert
+                            Dim data As String() = row.Split("|")
+                            Dim sqlgetserv_id As String = "select a.serv_id from service a(nolock) " &
+                                " join bill b(nolock) on a.serv_id = b.serv_id " &
+                                " join bill_detail c(nolock) on b.bill_id = c.bill_id " &
+                                " join promotion d(nolock) on c.prom_id = d.prom_id " &
+                                " where(d.prom_id = " & data(1) & ")"
+                            Dim serv_id As Integer = Obj_query.selectdataInt(sqlgetserv_id)
+                            sql = "update service set serv_sts = 'S' where serv_id = " & serv_id
+                            Obj_query.DMLData(sql)
+                        Next
                     End If
 
                     MsgBox("เพิ่มข้อมูลการใช้เรียบร้อยแล้ว")
+                    GetUseservtoGrid()
                     clearData()
                 End If
             End If
@@ -1171,11 +1229,13 @@ Public Class form_service
         GetDataToGridPromotion(Promsql, grid_showafter, "promnotchoose")
 
         Dim Sqlservlist As String = "select ROW_NUMBER() over (order by c.liserv_id) 'ลำดับ',c.liserv_name 'รายการบริการ' , d.liserv_type_name 'ประเภทรายการบริการ'  " &
-         " , convert(varchar,c.liserv_price,1) 'ราคา' , convert(varchar,c.liserv_id) " &
+         " , convert(varchar,c.liserv_price,1) 'ราคา' , convert(varchar,c.liserv_id), j.prom_id, j.prom_name, e.emp_fullname " &
          " from use_service a(nolock) " &
          " join use_service_detail b(nolock) on a.use_id = b.use_id " &
          " join service_list c(nolock) on b.liserv_id = c.liserv_id " &
          " join service_list_type d(nolock) on c.liserv_type_id = d.liserv_type_id " &
+         " join employee e(nolock) on b.emp_id = e.emp_id " &
+         " join promotion j(nolock) on b.prom_id = j.prom_id " &
          " where a.use_id = " & useid
         Dim detailservicelist As DataTable = Obj_query.selectDatatoGrid(Sqlservlist)
 
@@ -1186,7 +1246,10 @@ Public Class form_service
             Dim servtype As String = detailservicelist(i)(2).ToString()
             Dim servprice As String = detailservicelist(i)(3).ToString()
             Dim servid1 As String = detailservicelist(i)(4).ToString()
-            Dim rowliserv As String() = New String() {False, runno, servname, servtype, servprice, servid1}
+            Dim promid As String = detailservicelist(i)(5).ToString()
+            Dim promname As String = detailservicelist(i)(6).ToString()
+            Dim empname As String = detailservicelist(i)(7).ToString()
+            Dim rowliserv As String() = New String() {False, runno, servname, servtype, servprice, servid1, promname, promid, empname}
             grid_servuse.Rows.Add(rowliserv)
         Next
     End Sub
@@ -1201,5 +1264,53 @@ Public Class form_service
 
     Private Sub btn_clearservuse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_clearservuse.Click
         clearData()
+    End Sub
+
+    Private Sub btn_searchuse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_searchuse.Click
+        Dim index As Integer = cbo_searchuse.SelectedIndex
+        Dim textsearch As String = txt_searchuse.Text
+        Dim searchsql As String = ""
+        If index = 0 Then ' total
+            searchsql = "select ROW_NUMBER() over (order by use_id desc)'ลำดับ', use_date 'วันที่บริการ'" &
+        " , b.cus_fullname 'สมาชิกมาใช้บริการ' , c.emp_fullname 'พนักงานทำรายการ'  " &
+        " , case when a.use_sts = 'S' then 'เสร็จสมบูรณ์' when a.use_sts = 'C' then 'ยกเลิกรายการ' when a.use_sts = 'S' then 'เสร็จสมบูรณ์' end 'สถานะการบริการ'" &
+        " , isnull(serv_id,'') 'รหัสการบริการ',use_id,b.cus_id,b.custype_id " &
+        " from use_service a(nolock)  " &
+        " join customer b(nolock) on a.cus_id = b.cus_id " &
+        " join employee c(nolock) on a.emp_id = c.emp_id " &
+        " where a.use_sts <> 'C' " &
+        " order by use_id desc"
+        ElseIf index = 1 Then ' service date
+            searchsql = "select ROW_NUMBER() over (order by use_id desc)'ลำดับ', use_date 'วันที่บริการ'" &
+        " , b.cus_fullname 'สมาชิกมาใช้บริการ' , c.emp_fullname 'พนักงานทำรายการ'  " &
+        " , case when a.use_sts = 'S' then 'เสร็จสมบูรณ์' when a.use_sts = 'C' then 'ยกเลิกรายการ' when a.use_sts = 'S' then 'เสร็จสมบูรณ์' end 'สถานะการบริการ'" &
+        " , isnull(serv_id,'') 'รหัสการบริการ',use_id,b.cus_id,b.custype_id " &
+        " from use_service a(nolock)  " &
+        " join customer b(nolock) on a.cus_id = b.cus_id " &
+        " join employee c(nolock) on a.emp_id = c.emp_id " &
+        " where a.use_sts <> 'C' and convert(varchar(10),use_date,103) = '" & textsearch & "'" &
+        " order by use_id desc"
+        ElseIf index = 2 Then ' customer name
+            searchsql = "select ROW_NUMBER() over (order by use_id desc)'ลำดับ', use_date 'วันที่บริการ'" &
+        " , b.cus_fullname 'สมาชิกมาใช้บริการ' , c.emp_fullname 'พนักงานทำรายการ'  " &
+        " , case when a.use_sts = 'S' then 'เสร็จสมบูรณ์' when a.use_sts = 'C' then 'ยกเลิกรายการ' when a.use_sts = 'S' then 'เสร็จสมบูรณ์' end 'สถานะการบริการ'" &
+        " , isnull(serv_id,'') 'รหัสการบริการ',use_id,b.cus_id,b.custype_id " &
+        " from use_service a(nolock)  " &
+        " join customer b(nolock) on a.cus_id = b.cus_id " &
+        " join employee c(nolock) on a.emp_id = c.emp_id " &
+        " where a.use_sts <> 'C' and  b.cus_fullname like '" & textsearch & "%' or b.cus_fullname like '%" & textsearch & "%' or b.cus_fullname like '%" & textsearch & "'" &
+        " order by use_id desc"
+        ElseIf index = 3 Then
+            searchsql = "select ROW_NUMBER() over (order by use_id desc)'ลำดับ', use_date 'วันที่บริการ'" &
+        " , b.cus_fullname 'สมาชิกมาใช้บริการ' , c.emp_fullname 'พนักงานทำรายการ'  " &
+        " , case when a.use_sts = 'S' then 'เสร็จสมบูรณ์' when a.use_sts = 'C' then 'ยกเลิกรายการ' when a.use_sts = 'S' then 'เสร็จสมบูรณ์' end 'สถานะการบริการ'" &
+        " , isnull(serv_id,'') 'รหัสการบริการ',use_id,b.cus_id,b.custype_id " &
+        " from use_service a(nolock)  " &
+        " join customer b(nolock) on a.cus_id = b.cus_id " &
+        " join employee c(nolock) on a.emp_id = c.emp_id " &
+        " where a.use_sts = 'C' " &
+        " order by use_id desc"
+        End If
+        GetDataToGrid(searchsql, grid_resultuse)
     End Sub
 End Class

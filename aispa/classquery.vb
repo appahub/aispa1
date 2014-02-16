@@ -21,6 +21,21 @@ Public Class classquery
         closeDB()
         Return returnval
     End Function
+    Public Function selectdataStr(ByVal sql As String) As Integer
+        connectDB()
+        Dim returnval As String = ""
+        Try
+            cmd = New SqlCommand(sql, con)
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+            reader.Read()
+            returnval = reader(0).ToString()
+        Catch ex As Exception
+            'MsgBox("sql wrong : " + ex.Message.ToString())
+            closeDB()
+        End Try
+        closeDB()
+        Return returnval
+    End Function
     Public Function selectdatatoarraylist(ByVal sql As String) As ArrayList
         connectDB()
         Dim data As ArrayList = New ArrayList
